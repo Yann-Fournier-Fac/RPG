@@ -107,6 +107,12 @@ func Floor1() ([10][10]Case, int) {
 
 		}
 	}
+
+	f1[5][8].Affichage.color = color.New(color.BgGreen)
+	f1[5][8].Affichage.text = "   "
+	//f0[0][0].Affichage = " J "
+	f1[5][8].Isplayer = true
+
 	f1[9][0].Affichage.color = color.New(color.BgHiYellow)
 	f1[0][0].Affichage.text = "   "
 	f1[9][0].Enemies = true
@@ -135,6 +141,11 @@ func Floor2() ([10][10]Case, int) {
 
 		}
 	}
+	f2[5][8].Affichage.color = color.New(color.BgGreen)
+	f2[5][8].Affichage.text = "   "
+	//f0[0][0].Affichage = " J "
+	f2[5][8].Isplayer = true
+
 	f2[5][0].Affichage.color = color.New(color.BgBlack)
 	f2[5][0].Affichage.text = "   "
 	f2[5][0].Isdistributeur = true
@@ -170,6 +181,11 @@ func Floor3() ([10][10]Case, int) {
 
 		}
 	}
+	f3[5][8].Affichage.color = color.New(color.BgGreen)
+	f3[5][8].Affichage.text = "   "
+	//f0[0][0].Affichage = " J "
+	f3[5][8].Isplayer = true
+
 	f3[8][5].Affichage.color = color.New(color.BgYellow)
 	f3[8][5].Affichage.text = "   "
 	f3[8][5].Enemies = true

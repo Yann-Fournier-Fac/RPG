@@ -5,9 +5,7 @@ import (
 	"math/rand"
 )
 
-// Il faut encore rajouter les prints pour que le joueur voit l'avencement du combat.
-// Il faut tester le code.
-// Faire respawn le joueur avec la moitier de ces LP si il perd.
+// demander au joueur de choisir quelle arme ou quelle armur équiper
 
 func Fight(joueur Player, enemy PNJ) bool {
 	fmt.Printf("You have %v LP", joueur.LP)
@@ -57,103 +55,9 @@ func Fight(joueur Player, enemy PNJ) bool {
 		return true
 		//fmt.Printf(enemi.Ficha)
 	} else {
-		fmt.Printf("You are a piece of shit")
+		fmt.Println("You are a piece of shit")
+		fmt.Println("You got the half of your life point")
 		return false
 		//fmt.Printf(enemi.Photo)
 	}
-}
-
-
-
-
-
-
-
-
-
-func distributeur(tableau []Item, joueur *Player) []Item {
-	validation := ""
-	tab := []Item{}
-	fmt.Printf("Do you want to spend 10 credits to get an Item : yes/no ")
-	fmt.Printf("Write your answer : ")
-	fmt.Scan(&validation)
-	nbr := rand.Intn(5)
-	switch validation {
-	case "yes":
-		joueur.Inventaire = append(joueur.Inventaire, tableau[nbr])
-		joueur.Credits -= 10
-		fmt.Printf("You win %v. You can see it in your inventory", tableau[nbr].Name)
-	}
-	for i := 0; i < len(tab); i++ {
-		if i != nbr {
-			tab = append(tab, tableau[i])
-		}
-	}
-	tableau = tab
-	return tab
-}
-
-
-
-
-
-
-
-
-
-
-func Staires(nbr int) int {
-	switch nbr {
-	case 0:
-		validation := ""
-		fmt.Printf("Do you want to go upstraire : yes/no")
-		fmt.Printf("Write your anwser : ")
-		fmt.Scan(&validation)
-		if validation == "yes" {
-			nbr++
-			return nbr
-		} else if validation == "no" {
-			break
-		}
-	case 1:
-		validation := ""
-		fmt.Printf("Where do you want to go : up/down/stay")
-		fmt.Printf("Write your anwser : ")
-		fmt.Scan(&validation)
-		if validation == "up" {
-			nbr++
-			return nbr
-		} else if validation == "down" {
-			nbr--
-			return nbr
-		} else if validation == "stay" {
-			break
-		}
-	case 2:
-		validation := ""
-		fmt.Printf("Where do you want to go : up/down/stay")
-		fmt.Printf("Write your anwser : ")
-		fmt.Scan(&validation)
-		if validation == "up" {
-			nbr++
-			return nbr
-		} else if validation == "down" {
-			nbr--
-			return nbr
-		} else if validation == "stay" {
-			break
-		}
-	case 3:
-		validation := ""
-		fmt.Printf("Do you want to go downstraire : yes/no")
-		fmt.Printf("Write your anwser : ")
-		fmt.Scan(&validation)
-		if validation == "yes" {
-			nbr--
-			return nbr
-		} else if validation == "no" {
-			break
-		}
-	}
-	return nbr
 }

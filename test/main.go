@@ -3,16 +3,14 @@ package main
 // import "ebiten"
 
 import (
-	//"fmt"
+	"fmt"
 	"rpg"
 )
 
-func main() {
-	var player rpg.Player
-	player.Name = "Yann"
-	player.LP = 50
-	player.Attaque = 50
+//"rpg"
 
+func main() {
+	fmt.Println(rpg.Red + "Salut" + rpg.Reset)
 	/*var enemi rpg.PNJ
 	enemi.Name = "Darkvador"
 	enemi.Attaque = 25
