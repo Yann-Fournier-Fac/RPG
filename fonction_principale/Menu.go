@@ -9,6 +9,17 @@ import (
 // Mettre des clear() un peu partout
 
 func main() {
+	fmt.Println("Tout commence, le 01 Septembre 2022, dans le campus d’YNOV situé à Nanterre. ")
+	fmt.Println("À peine arrivé dans le hall pour votre premier jour, vous ne pouvez vous empêcher d'écouter")
+	fmt.Println("les discussions de couloirs, il semblerait qu'un pickpocket se soit infiltré sur le campus.")
+	fmt.Println("Cela n'était pas réellement votre problème jusqu'à ce qu'à l'heure du déjeuner, vous réalisiez")
+	fmt.Println("que votre carte graphique achetée ce matin même est manquante..")
+	fmt.Println("Selon des sources sûrs, un certain Paul se serait lancé dans le minage de")
+	fmt.Println("Crypto monnaies et heureux hasard.. Il a toujours voulu devenir pickpocket.")
+	fmt.Println("Après avoir entamé les négociations et sur demande du staff d'YNOV, vous seul")
+	fmt.Println("êtes en mesure de repousser l'invasion des mentors. ")
+	fmt.Println("Il est grand temps de vous équiper et de partir récupérer les biens dérobés.")
+	fmt.Printf("\n")
 	for {
 		str := ""
 		fmt.Println("Please, write what you want to do")

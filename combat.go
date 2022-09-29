@@ -39,7 +39,7 @@ func Fight(joueur Player, enemy PNJ) bool {
 		fmt.Printf("\n")
 		fmt.Printf("%v have %v LP", enemy.Name, enemy.LP)
 		fmt.Printf("\n")
-		for (joueur.LP != 0) && (enemy.LP != 0) {
+		for (joueur.LP > 0) && (enemy.LP > 0) {
 			fmt.Printf("Please write a number between 0 and 1 : ")
 			var pileface int
 			fmt.Scan(&pileface)
@@ -77,7 +77,7 @@ func Fight(joueur Player, enemy PNJ) bool {
 				fmt.Printf("Wrong input. Please try again")
 			}
 		}
-		if enemy.LP == 0 {
+		if enemy.LP <= 0 {
 			fmt.Printf("Well play %v, you won against %v", joueur.Name, enemy.Name)
 			return true
 			//fmt.Printf(enemi.Ficha)
