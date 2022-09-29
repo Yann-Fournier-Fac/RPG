@@ -17,6 +17,9 @@ func main() {
 		fmt.Println("save")
 		fmt.Println("exit")
 		fmt.Scan(&str)
+		armes := make(map[string]int)
+		armures := make(map[string]int)
+		soins := make(map[string]int)
 		switch str {
 		case "newgame":
 			level := 0
@@ -31,7 +34,7 @@ func main() {
 			player.LP = 50
 			player.Attaque = 50
 			player.Credits = 50
-			player.Inventaire = [3]map[string]int{}
+			player.Inventaire = [3]map[string]int{armes, armures, soins}
 
 			var Nesrine rpg.PNJ
 			Nesrine.Name = "Nesrine"

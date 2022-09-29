@@ -13,7 +13,7 @@ func distributeur(tableau []Item, joueur *Player, nbr int) []Item {
 	fmt.Println("Do you want to spend 10 credits to get an Item : yes/no ")
 	fmt.Printf("Write your answer : ")
 	fmt.Scan(&validation)
-	nb := rand.Intn(tab2)
+	nb := rand.Intn(tab2 - 1)
 	switch validation {
 	case "yes":
 		if nbr == 0 {
@@ -29,6 +29,8 @@ func distributeur(tableau []Item, joueur *Player, nbr int) []Item {
 			joueur.Credits -= 50
 			fmt.Printf("You win %v. You can see it in your inventory", tableau[nb].Name)
 		}
+	case "no":
+		return tableau
 	}
 	for i := 0; i < len(tab); i++ {
 		if i != nbr {

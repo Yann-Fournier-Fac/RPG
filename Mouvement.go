@@ -102,14 +102,39 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				return 10
 			}
 		}
+
 		if floor[i][j].Isdistributeur {
 			if (i == 5) && (j == 0) {
 				Dweapon = distributeur(Dweapon, &joueur, 0)
+				floor[i][j+1].Isplayer = true
+				floor[i][j+1].Affichage.color = color.New(color.BgGreen)
+				floor[i][j+1].Affichage.text = "   "
+				floor[i][j].Isplayer = false
+				floor[i][j].Affichage.color = color.New(color.BgBlack)
+				floor[i][j].Affichage.text = "   "
+				j += 1
 			} else if (i == 9) && (j == 5) {
 				Darmor = distributeur(Darmor, &joueur, 1)
+				floor[i-1][j].Isplayer = true
+				floor[i-1][j].Affichage.color = color.New(color.BgGreen)
+				floor[i-1][j].Affichage.text = "   "
+				floor[i][j].Isplayer = false
+				floor[i][j].Affichage.color = color.New(color.BgBlack)
+				floor[i][j].Affichage.text = "   "
+				i -= 1
 			} else if (i == 0) && (j == 4) {
 				Dheal = distributeur(Dheal, &joueur, 2)
+				floor[i+1][j].Isplayer = true
+				floor[i+1][j].Affichage.color = color.New(color.BgGreen)
+				floor[i+1][j].Affichage.text = "   "
+				floor[i][j].Isplayer = false
+				floor[i][j].Affichage.color = color.New(color.BgBlack)
+				floor[i][j].Affichage.text = "   "
+				i += 1
 			}
+			floor[i][j].Affichage.color = color.New(color.BgBlack)
+			floor[i][j].Affichage.text = "   "
+
 		} else if floor[i][j].Enemies {
 			validation := ""
 			if nbr == 0 {
@@ -124,6 +149,15 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 						joueur.Credits += Nesrine.Credits
 					}
 				}
+				fmt.Printf("Here are the commands that you can use to play this game : z/s/q/d/i/s/exit ")
+				fmt.Printf("\n")
+				floor[i][j-1].Isplayer = true
+				floor[i][j-1].Affichage.color = color.New(color.BgGreen)
+				floor[i][j-1].Affichage.text = "   "
+				floor[i][j].Isplayer = false
+				floor[i][j].Affichage.color = color.New(color.BgYellow)
+				floor[i][j].Affichage.text = "   "
+				j -= 1
 			} else if nbr == 1 {
 				fmt.Println("Do you want to fight against Guillaume: yes/no")
 				fmt.Printf("Write your answer : ")
@@ -135,9 +169,18 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 
 					} else {
 						joueur.Credits += Guillaume.Credits
-						
+
 					}
 				}
+				fmt.Printf("Here are the commands that you can use to play this game : z/s/q/d/i/s/exit ")
+				fmt.Printf("\n")
+				floor[i][j+1].Isplayer = true
+				floor[i][j+1].Affichage.color = color.New(color.BgGreen)
+				floor[i][j+1].Affichage.text = "   "
+				floor[i][j].Isplayer = false
+				floor[i][j].Affichage.color = color.New(color.BgYellow)
+				floor[i][j].Affichage.text = "   "
+				j += 1
 			} else if nbr == 3 {
 				fmt.Println("Do you want to fight against Paul : yes/no")
 				fmt.Printf("Write your answer : ")
@@ -151,6 +194,15 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 						return 10
 					}
 				}
+				fmt.Printf("Here are the commands that you can use to play this game : z/s/q/d/i/s/exit ")
+				fmt.Printf("\n")
+				floor[i-1][j].Isplayer = true
+				floor[i-1][j].Affichage.color = color.New(color.BgGreen)
+				floor[i-1][j].Affichage.text = "   "
+				floor[i][j].Isplayer = false
+				floor[i][j].Affichage.color = color.New(color.BgYellow)
+				floor[i][j].Affichage.text = "   "
+				i -= 1
 			}
 		} else if (i == 5) && (j == 9) {
 			nbr = Staires(nbr)

@@ -1,5 +1,7 @@
 package rpg
 
+// changer la facon de creer les Dweapon, Darmor, Dheal. faire des dictionnaires
+
 type PNJ struct {
 	Name    string
 	Enemies bool
@@ -32,7 +34,7 @@ type Item struct {
 func Weapon() []Item {
 
 	var Epee Item
-	Epee.Name = "épée"
+	Epee.Name = "epee"
 	Epee.Isarmor = false
 	Epee.Isweapon = true
 	Epee.Isheal = false
@@ -40,7 +42,7 @@ func Weapon() []Item {
 	Epee.Attaque = 55
 
 	var Mouse Item
-	Mouse.Name = "Souris"
+	Mouse.Name = "souris"
 	Mouse.Isarmor = false
 	Mouse.Isweapon = true
 	Mouse.Isheal = false
@@ -48,7 +50,7 @@ func Weapon() []Item {
 	Mouse.Attaque = 35
 
 	var Elec Item
-	Elec.Name = "Rallonge électrique"
+	Elec.Name = "rallonge"
 	Elec.Isarmor = false
 	Elec.Isweapon = true
 	Elec.Isheal = false
@@ -64,7 +66,7 @@ func Weapon() []Item {
 	Chair.Attaque = 75
 
 	var Ascii Item
-	Ascii.Name = "Affiche table ASCII"
+	Ascii.Name = "ascii"
 	Ascii.Isarmor = false
 	Ascii.Isweapon = true
 	Ascii.Isheal = false
@@ -72,7 +74,7 @@ func Weapon() []Item {
 	Ascii.Attaque = 2
 
 	var Table Item
-	Table.Name = "Table"
+	Table.Name = "table"
 	Table.Isarmor = false
 	Table.Isweapon = true
 	Table.Isheal = false
@@ -80,7 +82,7 @@ func Weapon() []Item {
 	Table.Attaque = 90
 
 	var Money Item
-	Money.Name = "Euros de lancer"
+	Money.Name = "piece"
 	Money.Isarmor = false
 	Money.Isweapon = true
 	Money.Isheal = false
@@ -88,6 +90,15 @@ func Weapon() []Item {
 	Money.Attaque = 67
 
 	Dweapon := []Item{Epee, Mouse, Elec, Chair, Ascii, Table, Money}
+	/*Dweapon := map[string]int{
+		Elec.Name:  Elec.Attaque,
+		Mouse.Name: Mouse.Attaque,
+		Elec.Name:  Elec.Attaque,
+		Chair.Name: Chair.Attaque,
+		Ascii.Name: Ascii.Attaque,
+		Table.Name: Table.Attaque,
+		Money.Name: Money.Attaque,
+	}*/
 
 	return Dweapon
 }
@@ -96,7 +107,7 @@ func Weapon() []Item {
 func Armor() []Item {
 
 	var BDE Item
-	BDE.Name = "Affiche BDE"
+	BDE.Name = "bde"
 	BDE.Isarmor = true
 	BDE.Isweapon = false
 	BDE.Isheal = false
@@ -104,7 +115,7 @@ func Armor() []Item {
 	BDE.Attaque = 0
 
 	var Processor Item
-	Processor.Name = "Processeur"
+	Processor.Name = "processeur"
 	Processor.Isarmor = true
 	Processor.Isweapon = false
 	Processor.Isheal = false
@@ -112,7 +123,7 @@ func Armor() []Item {
 	Processor.Attaque = 0
 
 	var Card Item
-	Card.Name = "Carte d'accès YNOV"
+	Card.Name = "carteynov"
 	Card.Isarmor = true
 	Card.Isweapon = false
 	Card.Isheal = false
@@ -120,7 +131,7 @@ func Armor() []Item {
 	Card.Attaque = 0
 
 	var Coat Item
-	Coat.Name = "Veste"
+	Coat.Name = "veste"
 	Coat.Isarmor = true
 	Coat.Isweapon = false
 	Coat.Isheal = false
@@ -128,7 +139,7 @@ func Armor() []Item {
 	Coat.Attaque = 0
 
 	var Navigo Item
-	Navigo.Name = "Carte Navigo"
+	Navigo.Name = "cartenavigo"
 	Navigo.Isarmor = true
 	Navigo.Isweapon = false
 	Navigo.Isheal = false
@@ -136,7 +147,7 @@ func Armor() []Item {
 	Navigo.Attaque = 0
 
 	var PC Item
-	PC.Name = "PC portable"
+	PC.Name = "pcportable"
 	PC.Isarmor = true
 	PC.Isweapon = false
 	PC.Isheal = false
@@ -144,7 +155,7 @@ func Armor() []Item {
 	PC.Attaque = 0
 
 	var Bagpack Item
-	Bagpack.Name = "Sac à dos"
+	Bagpack.Name = "sacados"
 	Bagpack.Isarmor = true
 	Bagpack.Isweapon = false
 	Bagpack.Isheal = false
@@ -152,7 +163,7 @@ func Armor() []Item {
 	Bagpack.Attaque = 0
 
 	var Kapla Item
-	Kapla.Name = "Kapla"
+	Kapla.Name = "kapla"
 	Kapla.Isarmor = true
 	Kapla.Isweapon = false
 	Kapla.Isheal = false
@@ -160,7 +171,7 @@ func Armor() []Item {
 	Kapla.Attaque = 0
 
 	var Polar Item
-	Polar.Name = "Veste polaire"
+	Polar.Name = "vestepolaire"
 	Polar.Isarmor = true
 	Polar.Isweapon = false
 	Polar.Isheal = false
@@ -176,7 +187,7 @@ func Armor() []Item {
 func Heal() []Item {
 
 	var Water Item
-	Water.Name = "Gourde à eau"
+	Water.Name = "gourdeaeau"
 	Water.Isarmor = false
 	Water.Isweapon = false
 	Water.Isheal = true
@@ -184,7 +195,7 @@ func Heal() []Item {
 	Water.Attaque = 0
 
 	var USB Item
-	USB.Name = "Clé USB"
+	USB.Name = "cleusb"
 	USB.Isarmor = false
 	USB.Isweapon = false
 	USB.Isheal = true
@@ -192,7 +203,7 @@ func Heal() []Item {
 	USB.Attaque = 0
 
 	var Food Item
-	Food.Name = "Gamelle repas"
+	Food.Name = "repas"
 	Food.Isarmor = false
 	Food.Isweapon = false
 	Food.Isheal = true
@@ -200,7 +211,7 @@ func Heal() []Item {
 	Food.Attaque = 0
 
 	var Snack Item
-	Snack.Name = "Snack"
+	Snack.Name = "snack"
 	Snack.Isarmor = false
 	Snack.Isweapon = false
 	Snack.Isheal = true
@@ -208,7 +219,7 @@ func Heal() []Item {
 	Snack.Attaque = 0
 
 	var Power Item
-	Power.Name = "Batterie externe"
+	Power.Name = "batterie"
 	Power.Isarmor = false
 	Power.Isweapon = false
 	Power.Isheal = true
