@@ -6,8 +6,8 @@ func Staires(level int) int {
 	switch level {
 	case 0:
 		validation := ""
-		fmt.Println("Do you want to go upstraire : yes/no")
-		fmt.Printf("Write your anwser : ")
+		fmt.Println("Vouslez-vous monter d'un étage ? yes/no")
+		fmt.Printf("Écrivez votre réponse : ")
 		fmt.Scan(&validation)
 		if validation == "yes" {
 			level++
@@ -17,8 +17,8 @@ func Staires(level int) int {
 		}
 	case 1:
 		validation := ""
-		fmt.Println("Where do you want to go : up/down/stay")
-		fmt.Printf("Write your anwser : ")
+		fmt.Println("Où voulez-vous aller ? up/down/stay")
+		fmt.Printf("Écrivez votre réponse : ")
 		fmt.Scan(&validation)
 		if validation == "up" {
 			level++
@@ -31,8 +31,8 @@ func Staires(level int) int {
 		}
 	case 2:
 		validation := ""
-		fmt.Println("Where do you want to go : up/down/stay")
-		fmt.Printf("Write your anwser : ")
+		fmt.Println("Où voulez-vous aller ? up/down/stay")
+		fmt.Printf("Écrivez votre réponse : ")
 		fmt.Scan(&validation)
 		if validation == "up" {
 			level++
@@ -45,8 +45,8 @@ func Staires(level int) int {
 		}
 	case 3:
 		validation := ""
-		fmt.Println("Do you want to go downstraire : yes/no")
-		fmt.Printf("Write your anwser : ")
+		fmt.Println("Voulez-vous descendre d'un étage ? yes/no")
+		fmt.Printf("Écrivez votre réponse : ")
 		fmt.Scan(&validation)
 		if validation == "yes" {
 			level--

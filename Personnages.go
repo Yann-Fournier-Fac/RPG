@@ -34,7 +34,7 @@ type Item struct {
 func Weapon() []Item {
 
 	var Epee Item
-	Epee.Name = "epee"
+	Epee.Name = "épée"
 	Epee.Isarmor = false
 	Epee.Isweapon = true
 	Epee.Isheal = false
@@ -82,7 +82,7 @@ func Weapon() []Item {
 	Table.Attaque = 90
 
 	var Money Item
-	Money.Name = "piece"
+	Money.Name = "pièce"
 	Money.Isarmor = false
 	Money.Isweapon = true
 	Money.Isheal = false
@@ -139,7 +139,7 @@ func Armor() []Item {
 	Coat.Attaque = 0
 
 	var Navigo Item
-	Navigo.Name = "cartenavigo"
+	Navigo.Name = "carte navigo"
 	Navigo.Isarmor = true
 	Navigo.Isweapon = false
 	Navigo.Isheal = false
@@ -147,7 +147,7 @@ func Armor() []Item {
 	Navigo.Attaque = 0
 
 	var PC Item
-	PC.Name = "pcportable"
+	PC.Name = "pc portable"
 	PC.Isarmor = true
 	PC.Isweapon = false
 	PC.Isheal = false
@@ -155,7 +155,7 @@ func Armor() []Item {
 	PC.Attaque = 0
 
 	var Bagpack Item
-	Bagpack.Name = "sacados"
+	Bagpack.Name = "sac à dos"
 	Bagpack.Isarmor = true
 	Bagpack.Isweapon = false
 	Bagpack.Isheal = false
@@ -171,7 +171,7 @@ func Armor() []Item {
 	Kapla.Attaque = 0
 
 	var Polar Item
-	Polar.Name = "vestepolaire"
+	Polar.Name = "veste polaire"
 	Polar.Isarmor = true
 	Polar.Isweapon = false
 	Polar.Isheal = false
@@ -187,7 +187,7 @@ func Armor() []Item {
 func Heal() []Item {
 
 	var Water Item
-	Water.Name = "gourdeaeau"
+	Water.Name = "gourde"
 	Water.Isarmor = false
 	Water.Isweapon = false
 	Water.Isheal = true
@@ -195,7 +195,7 @@ func Heal() []Item {
 	Water.Attaque = 0
 
 	var USB Item
-	USB.Name = "cleusb"
+	USB.Name = "clé usb"
 	USB.Isarmor = false
 	USB.Isweapon = false
 	USB.Isheal = true

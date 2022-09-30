@@ -10,6 +10,19 @@ import (
 
 func main() {
 	// Histoire
+	fmt.Println(" _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ ")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/")
+	fmt.Println("\n")
+	fmt.Println("	__  __                    __    _ ____   ")
+	fmt.Println("	\\ \\/ /___  ____ _   __   / /   (_) __/__ ")
+	fmt.Println("	 \\  / __ \\/ __ \\ | / /  / /   / / /_/ _ \\")
+	fmt.Println("	 / / / / / /_/ / |/ /  / /___/ / __/  __/")
+	fmt.Println("	/_/_/ /_/\\____/|___/  /_____/_/_/  \\___/")
+	fmt.Println("\n")
+	fmt.Println(" _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ ")
+	fmt.Println("/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/")
+	fmt.Println("\n")
+
 	fmt.Println("Tout commence, le 01 Septembre 2022, dans le campus d’YNOV situé à Nanterre. ")
 	fmt.Println("À peine arrivé dans le hall pour votre premier jour, vous ne pouvez vous empêcher d'écouter")
 	fmt.Println("les discussions de couloirs, il semblerait qu'un pickpocket se soit infiltré sur le campus.")
@@ -24,11 +37,11 @@ func main() {
 
 	for { // Boucle infinie (le jeu tourneras à l'infini)
 		str := ""
-		fmt.Println("Please, write what you want to do") // Affichage du menu principales
-		fmt.Println("newgame")
-		fmt.Println("about")
-		fmt.Println("save")
-		fmt.Println("exit")
+		fmt.Println("Écrivez ce que vous désirez faire :") // Affichage du menu principales
+		fmt.Println("1) newgame")
+		fmt.Println("2) about")
+		fmt.Println("3) save")
+		fmt.Println("4) exit")
 		fmt.Scan(&str) // demande au joueur de choisir ce qu'il veut faire
 
 		armes := make(map[string]int) // creation des map qui composeront l'inventeire du joueur
@@ -42,7 +55,7 @@ func main() {
 
 			// Le joueur entre son nom
 			name := ""
-			fmt.Printf("Enter your name : ")
+			fmt.Printf("Entrez votre pseudo : ")
 			fmt.Scan(&name)
 
 			// Creation du player
@@ -71,8 +84,8 @@ func main() {
 			var Paul rpg.PNJ
 			Paul.Name = "Paul"
 			Paul.Enemies = true
-			Paul.Attaque = 200
-			Paul.LP = 500
+			Paul.Attaque = 70
+			Paul.LP = 300
 			Paul.Credits = 700
 
 			// boucle infinie qui fait tourner le jeu
@@ -96,13 +109,15 @@ func main() {
 				}
 			}
 		case "about":
-			fmt.Println("readme")
+			fmt.Println("Ce jeu a été développé par 4 étudiants de Paris Ynov Campus. (Yann FOURNIER, Thomas RUCKTOOA et Ouardia AOUDAR)")
+			return
 		case "save":
 			fmt.Println("start a save")
 		case "exit":
 			return
 		default:
-			fmt.Println("wrong input")
+			fmt.Println("Merci d'écrire les choix affichés !")
+			fmt.Printf("\n")
 		}
 	}
 }

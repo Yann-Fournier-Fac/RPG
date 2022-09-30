@@ -10,32 +10,36 @@ func distributeur(tableau []Item, joueur *Player, nbr int) []Item {
 	validation := ""
 	tab2 := len(tableau)
 	tab := []Item{}
-	fmt.Println("Do you want to spend 10 credits to get an Item : yes/no ")
-	fmt.Printf("Write your answer : ")
+	fmt.Println("Voulez-vous dépenser 10 crédits pour obtenir un objet ? yes/no ")
+	fmt.Printf("Écrivez votre réponse : ")
 	fmt.Scan(&validation)
 	nb := rand.Intn(tab2 - 1)
 	switch validation {
 	case "yes":
 		if nbr == 0 {
 			joueur.Inventaire[nbr][tableau[nb].Name] = tableau[nb].Attaque
-			joueur.Credits -= 50
-			fmt.Printf("You win %v. You can see it in your inventory", tableau[nb].Name)
+			joueur.Credits -= 10
+			fmt.Printf("Vous avez gagné %v. Il est désormais visible dans votre inventaire", tableau[nb].Name)
+			fmt.Println("\n")
 		} else if nbr == 1 {
 			joueur.Inventaire[nbr][tableau[nb].Name] = tableau[nb].LP
-			joueur.Credits -= 50
-			fmt.Printf("You win %v. You can see it in your inventory", tableau[nb].Name)
+			joueur.Credits -= 10
+			fmt.Printf("Vous avez gagné %v. Il est désormais visible dans votre inventaire", tableau[nb].Name)
+			fmt.Println("\n")
 		} else if nbr == 2 {
 			joueur.Inventaire[nbr][tableau[nb].Name] = tableau[nb].LP
-			joueur.Credits -= 50
-			fmt.Printf("You win %v. You can see it in your inventory", tableau[nb].Name)
+			joueur.Credits -= 10
+			fmt.Printf("Vous avez gagné %v. Il est désormais visible dans votre inventaire", tableau[nb].Name)
+			fmt.Println("\n")
 		}
 	case "no":
 		return tableau
 	}
-	for i := 0; i < len(tab); i++ {
-		if i != nbr {
+	for i := 0; i < len(tableau); i++ {
+		if i != nb {
 			tab = append(tab, tableau[i])
 		}
 	}
+	fmt.Printf("Il vous reste : %v credits\n", joueur.Credits)
 	return tab
 }
