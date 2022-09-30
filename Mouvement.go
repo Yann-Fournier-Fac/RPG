@@ -110,6 +110,7 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgBlack)
 				floor[i][j].Affichage.text = "   "
+				Map(floor, nbr)
 				j += 1
 			} else if (i == 9) && (j == 5) {
 				Darmor = distributeur(Darmor, &joueur, 1)
@@ -119,6 +120,7 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgBlack)
 				floor[i][j].Affichage.text = "   "
+				Map(floor, nbr)
 				i -= 1
 			} else if (i == 0) && (j == 4) {
 				Dheal = distributeur(Dheal, &joueur, 2)
@@ -128,6 +130,7 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgBlack)
 				floor[i][j].Affichage.text = "   "
+				Map(floor, nbr)
 				i += 1
 			}
 			//floor[i][j].Affichage.color = color.New(color.BgBlack)
@@ -166,11 +169,10 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j-1].Isplayer = true
 				floor[i][j-1].Affichage.color = color.New(color.BgGreen)
 				floor[i][j-1].Affichage.text = "   "
-				floor[i][j-1].Affichage.color.Print(floor[j][i].Affichage.text)
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgYellow)
 				floor[i][j].Affichage.text = "   "
-				floor[i][j].Affichage.color.Print(floor[j][i].Affichage.text)
+				Map(floor, nbr)
 				j -= 1
 			} else if nbr == 1 {
 				fmt.Println("Do you want to fight against Guillaume: yes/no")
@@ -194,6 +196,7 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgYellow)
 				floor[i][j].Affichage.text = "   "
+				Map(floor, nbr)
 				j += 1
 			} else if nbr == 3 {
 				fmt.Println("Do you want to fight against Paul : yes/no")
@@ -216,6 +219,7 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgYellow)
 				floor[i][j].Affichage.text = "   "
+				Map(floor, nbr)
 				i -= 1
 			}
 		} else if (i == 5) && (j == 9) {
