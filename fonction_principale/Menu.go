@@ -9,6 +9,7 @@ import (
 // Mettre des clear() un peu partout
 
 func main() {
+	// Histoire
 	fmt.Println("Tout commence, le 01 Septembre 2022, dans le campus d’YNOV situé à Nanterre. ")
 	fmt.Println("À peine arrivé dans le hall pour votre premier jour, vous ne pouvez vous empêcher d'écouter")
 	fmt.Println("les discussions de couloirs, il semblerait qu'un pickpocket se soit infiltré sur le campus.")
@@ -20,26 +21,31 @@ func main() {
 	fmt.Println("êtes en mesure de repousser l'invasion des mentors. ")
 	fmt.Println("Il est grand temps de vous équiper et de partir récupérer les biens dérobés.")
 	fmt.Printf("\n")
-	for {
+
+	for { // Boucle infinie (le jeu tourneras à l'infini)
 		str := ""
-		fmt.Println("Please, write what you want to do")
+		fmt.Println("Please, write what you want to do") // Affichage du menu principales
 		fmt.Println("newgame")
 		fmt.Println("about")
 		fmt.Println("save")
 		fmt.Println("exit")
-		fmt.Scan(&str)
-		armes := make(map[string]int)
+		fmt.Scan(&str) // demande au joueur de choisir ce qu'il veut faire
+
+		armes := make(map[string]int) // creation des map qui composeront l'inventeire du joueur
 		armures := make(map[string]int)
 		soins := make(map[string]int)
+
 		switch str {
 		case "newgame":
 			level := 0
 			fmt.Printf("\n")
+
+			// Le joueur entre son nom
 			name := ""
 			fmt.Printf("Enter your name : ")
 			fmt.Scan(&name)
 
-			// Creation des enemies
+			// Creation du player
 			var player rpg.Player
 			player.Name = name
 			player.LP = 50
@@ -47,6 +53,7 @@ func main() {
 			player.Credits = 50
 			player.Inventaire = [3]map[string]int{armes, armures, soins}
 
+			// Creation des enemis
 			var Nesrine rpg.PNJ
 			Nesrine.Name = "Nesrine"
 			Nesrine.Enemies = true
@@ -68,6 +75,7 @@ func main() {
 			Paul.LP = 500
 			Paul.Credits = 700
 
+			// boucle infinie qui fait tourner le jeu
 			for {
 				if level == 10 {
 					return

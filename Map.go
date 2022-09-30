@@ -4,18 +4,8 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	//"strconv"
 )
 
-/*type Color struct{
-	Red
-	Yellow
-	Pink
-	Brown
-	Blue
-	White
-	Green
-}*/
 
 type Case struct { //
 	Walkable       bool
@@ -114,7 +104,7 @@ func Floor1() ([10][10]Case, int) {
 	f1[5][8].Isplayer = true
 
 	f1[9][0].Affichage.color = color.New(color.BgHiYellow)
-	f1[0][0].Affichage.text = "   "
+	f1[9][0].Affichage.text = "   "
 	f1[9][0].Enemies = true
 	//f1[9][0].Affichage = " G "
 

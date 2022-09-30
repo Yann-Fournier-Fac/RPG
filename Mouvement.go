@@ -6,8 +6,6 @@ import (
 	"github.com/fatih/color"
 )
 
-// Revoir comment faire bien spawn le joueur apres un combat annulé sans effacer la case jaune
-
 func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PNJ, Paul PNJ) int {
 	Map(floor, nbr)
 	var i int = 0
@@ -132,8 +130,8 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 				floor[i][j].Affichage.text = "   "
 				i += 1
 			}
-			floor[i][j].Affichage.color = color.New(color.BgBlack)
-			floor[i][j].Affichage.text = "   "
+			//floor[i][j].Affichage.color = color.New(color.BgBlack)
+			//floor[i][j].Affichage.text = "   "
 
 		} else if floor[i][j].Enemies {
 			validation := ""
@@ -148,15 +146,31 @@ func Moove(floor [10][10]Case, nbr int, joueur Player, Nesrine PNJ, Guillaume PN
 					} else {
 						joueur.Credits += Nesrine.Credits
 					}
+				} else if validation == "no" {
+					fmt.Println("        ⣠⣶⡾⠏⠉⠙⠳⢦⡀⠀⠀⠀⢠⠞⠉⠙⠲⡀⠀")
+					fmt.Println("    ⠀⠀⠀⣴⠿⠏⠀⠀⠀⠀⠀⠀⢳⡀  ⡏⠀⠀⠀⠀⠀⢷")
+					fmt.Println("    ⠀⠀⢠⣟⣋⡀⢀⣀⣀⡀⠀⣀⡀⣧⠀⢸⠀⠀⠀⠀⠀ ⡇")
+					fmt.Println("      ⣯⣯⡭⠁⠸⣛⣟⠆⡴⣻⡲⣿⠀⣸  OK !⡇")
+					fmt.Println("    ⠀⠀⣟⣿⡭⠀⠀⠀⠀⠀⢱⠀⠀⣿⠀ ⢹⠀⠀⠀⠀⠀⡇")
+					fmt.Println("    ⠀⠀⠙⢿⣯⠄⠀⠀⠀⢀⡀⠀⠀⡿⠀⠀⡇⠀⠀⠀⠀⡼")
+					fmt.Println("    ⠀⠀⠀⠀⠹⣶⠆⠀⠀⠀⠀⠀⡴⠃⠀⠀⠘⠤⣄⣠⠞⠀")
+					fmt.Println("    ⠀⠀⠀⠀⠀⢸⣷⡦⢤⡤⢤⣞⣁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+					fmt.Println("    ⠀⠀⢀⣤⣴⣿⣏⠁⠀⠀⠸⣏⢯⣷⣖⣦⡀⠀⠀⠀⠀⠀⠀")
+					fmt.Println("    ⢀⣾⣽⣿⣿⣿⣿⠛⢲⣶⣾⢉⡷⣿⣿⠵⣿⠀⠀⠀⠀⠀⠀")
+					fmt.Println("    ⣼⣿⠍⠉⣿⡭⠉⠙⢺⣇⣼⡏⠀⠀⠀⣄⢸⠀⠀⠀⠀⠀⠀")
+					fmt.Println("    ⣿⣿⣧⣀⣿.........⣀⣰⣏⣘⣆⣀⠀⠀")
+					fmt.Printf("\n")
 				}
 				fmt.Printf("Here are the commands that you can use to play this game : z/s/q/d/i/s/exit ")
 				fmt.Printf("\n")
 				floor[i][j-1].Isplayer = true
 				floor[i][j-1].Affichage.color = color.New(color.BgGreen)
 				floor[i][j-1].Affichage.text = "   "
+				floor[i][j-1].Affichage.color.Print(floor[j][i].Affichage.text)
 				floor[i][j].Isplayer = false
 				floor[i][j].Affichage.color = color.New(color.BgYellow)
 				floor[i][j].Affichage.text = "   "
+				floor[i][j].Affichage.color.Print(floor[j][i].Affichage.text)
 				j -= 1
 			} else if nbr == 1 {
 				fmt.Println("Do you want to fight against Guillaume: yes/no")
