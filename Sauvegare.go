@@ -33,12 +33,17 @@ func Marshal(emp Identite) []byte {
 }
 
 func main() {
+
 	file, err := os.Create("Save.txt")
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	fmt.Println("File created successfully")
+
 	defer file.Close()
+
 	emp := Identite{Name: "George Smith", Age: 30}
 	marshaled_data := Marshal(emp)
 	read, err := os.OpenFile("Save.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0600)

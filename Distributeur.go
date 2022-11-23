@@ -20,17 +20,17 @@ func distributeur(tableau []Item, joueur *Player, nbr int) []Item {
 			joueur.Inventaire[nbr][tableau[nb].Name] = tableau[nb].Attaque
 			joueur.Credits -= 10
 			fmt.Printf("Vous avez gagné %v. Il est désormais visible dans votre inventaire", tableau[nb].Name)
-			fmt.Println("\n")
+			fmt.Printf("\n")
 		} else if nbr == 1 {
 			joueur.Inventaire[nbr][tableau[nb].Name] = tableau[nb].LP
 			joueur.Credits -= 10
 			fmt.Printf("Vous avez gagné %v. Il est désormais visible dans votre inventaire", tableau[nb].Name)
-			fmt.Println("\n")
+			fmt.Printf("\n")
 		} else if nbr == 2 {
 			joueur.Inventaire[nbr][tableau[nb].Name] = tableau[nb].LP
 			joueur.Credits -= 10
 			fmt.Printf("Vous avez gagné %v. Il est désormais visible dans votre inventaire", tableau[nb].Name)
-			fmt.Println("\n")
+			fmt.Printf("\n")
 		}
 	case "no":
 		return tableau
